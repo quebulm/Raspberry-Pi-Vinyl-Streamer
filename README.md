@@ -48,9 +48,8 @@ Download the Raspberry Pi Imager from [Raspberry Pi Software](https://www.raspbe
 
 ![Raspberry Pi Software](https://assets.raspberrypi.com/static/md-bfd602be71b2c1099b91877aed3b41f0.png)
 
-Also, download the preconfigured image for your project from GitHub: [Download Image](https://github.com/quebulm/Raspberry-Pi-Vinyl-Streamer/).
+Also, download the preconfigured image for your project from GitHub: [Download Image](https://github.com/quebulm/Raspberry-Pi-Vinyl-Streamer/releases/tag/v0.1.0).
 
-....Unpack with Z Unpack.....
 
 ---
 
