@@ -68,7 +68,7 @@ Also, download the preconfigured image for your project from GitHub: [Download I
   - Password: `setyourpassword` # Is no longer needed after the easy installation
   - Input your Wi-Fi information.
   
-  <img src="https://i.ibb.co/tDW8Qrk/Bildschirmfoto-2023-10-06-um-16-20-48.png" style="max-height:600px; background-color:white">
+  <img src="https://i.ibb.co/wRGnkdg/Bildschirmfoto-2023-10-06-um-16-20-48.png" style="max-height:600px;">
 
  
 3. Save these settings.
