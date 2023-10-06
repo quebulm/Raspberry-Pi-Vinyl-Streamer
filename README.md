@@ -35,7 +35,7 @@ After that, you will have a stream on your local network which you can access wi
 
 - **Capture Device**: Behringer UCA202
 - **Amplifier**: PHONO PP400
-- **Server:** Raspberry Pi 3 and Micro SD Card (8GB or 32GB) - (8GB is enough)
+- **Server:** Raspberry Pi 3 and Micro SD Card - (8GB is enough)
 
 Ensure that you have the above-mentioned hardware components before proceeding with the setup.
 
