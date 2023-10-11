@@ -63,11 +63,11 @@ Also, download the preconfigured image for your project from GitHub: [Download I
 - **Settings**: Click on the Settings tab and input the following information:
 
   - Hostname: `vinylstream`
-  - User: `vinyluser` # Is no longer needed after the easy installation
+  - User: `vinyluser` # Important: The username must be exactly the same. Also pay attention to uppercase and lowercase letters
   - Password: `setyourpassword` # Is no longer needed after the easy installation
   - Input your Wi-Fi information.
   
-  <img src="https://i.ibb.co/wRGnkdg/Bildschirmfoto-2023-10-06-um-16-20-48.png" style="max-height:600px;">
+  <img src="https://i.ibb.co/2YKPC6d/Bildschirmfoto-2023-10-10-um-15-17-52.png" style="max-height:600px;">
 
  
 3. Save these settings.
