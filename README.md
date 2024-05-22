@@ -1,21 +1,26 @@
-# Quality Audio Streaming Setup Guide with Raspberry Pi, Icecast, and Darkice
+# Guide for Hi-Fi analog to digital audio streaming guide using Icecast and Darkice on a Raspberry Pi
 
-This repository provides all the tools you need to convert your vinyl records into a high-quality digital audio stream, making your analog collection accessible across a wide range of digital platforms. At the heart of this setup is the Raspberry Pi, a small and affordable computer that serves as the streaming server. 
+This repository provides all the tools and step-by-step guide needed to convert a high-fidelity audio source into a high-quality digital audio stream, making your vinyl record collection or other analog audio sources accessible across a wide range of digital platforms using Icecast. 
 
-I use a PHONO PP400 amplifier and a Behringer UCA202 capture device, but this method should work with every other Raspberry-compatible capture device and with any other amplifier.
+At the heart of this setup is the Raspberry Pi, a small and affordable ARM-based computer that serves as the audio streaming server (commonly referred to as music streamer or network streamers when sold as a prebuilt applicance).
+
+Other than your audio source you are also going to need an external audio capture device that provides line-in interface ports and ADC (analogue-to-digital converter) + a preamplifier if your audio source equipment does not have built-in preamp.
+
+An alternative to above is to buy an audio source with embedded USB audio codec output, like a "USB turntable" (there are several different models of USB turntables of various quality on the market so this might not be suitable for audiophiles).
 
 ![](https://i.ibb.co/pKLs9nC/image.webp)
 
+### How It Works (Architecture):
 
-### How It Works:
+Disclaimer: I have personally tested this solution using the combination of a Behringer UCA202 USB Audio Device for analogue-to-digital conversion and capturing + a PHONO PP400 preamplifier, but in theory this method should work with every other Raspberry-compatible capture device and with any other preamplifier.
 
-1. **Audio Capture**: Your turntable's audio output is first routed through the PHONO PP400 amplifier, which prepares the analog signal for digital capture.
-  
-2. **Digital Conversion**: The amplified signal is then fed into the Behringer UCA202 capture device, where it's digitized and sent to the Raspberry Pi.
+1. **Preamplication**: Your turntable's audio output is first routed through a preamplifier (also known as a phono preamp and RIAA pre-amp), that converts a weak signal into an output signal strong enough to be noise-tolerant and strong enough for further processing. Without this preamplication, the final signal would be noisy or distorted. The preamp also ensures that your records sound balanced and accurate.
 
-3. **Streaming**: On the Raspberry Pi, two critical software components come into play:
-    - **Darkice**: This live audio streamer captures the digital audio and encodes it into a streamable format.
-    - **Icecast**: This streaming media server takes the encoded audio from Darkice and broadcasts it, making it accessible to listeners over the internet.
+2. **Analog Audio Capture and Digital Conversion**: The amplified signal from the pre-amp is fed into the audio capture device, where it is digitized using its ADC (analogue-to-digital converter) and sent to the Raspberry Pi.
+
+3. **Streaming**: On the Raspberry Pi, two critical software components that come into play:
+    - **Darkice**: This live audio streamer that captures/records the digital audio from the  audio interface and encodes it into a streamable format.
+    - **Icecast**: This streaming media server takes the encoded audio from Darkice and broadcasts it, making it accessible to listeners locally via a URL or over the internet.
 
 ### Setup Options:
 
@@ -30,15 +35,48 @@ After that, you will have a stream on your local network which you can access wi
 
 ## Step-by-Step Guide
 
+To facilitate capturing and digitizing audio from an analog source and streaming it you are going to have to need a few things.
+
+Ensure that you have all the prerequisite hardware components mentioned below before proceeding with the setup.
 
 ### Step 0: Acquire Hardware
 
-- **Capture Device**: Behringer UCA202
-- **Amplifier**: PHONO PP400
-- **Server:** Raspberry Pi 3 and Micro SD Card - (8GB is enough)
+#### Audio Capture Device
 
-Ensure that you have the above-mentioned hardware components before proceeding with the setup.
+If you own an Hi-Fi audio source equipment like an LP record player/turntable that only has analog audio output (.i.e. it does not have a embedded USB audio codec output) then the easiest option is to buy and use an external stand-alone USB Audio Device for analogue-to-digital conversion. These mentioned solutions most often support utilizing a USB Audio Class 2.0 pipeline that can support high-definition audio formats up to 192KHz and 32bits using a standard digital audio interface, however you need to check the specification before buying the device to make sure it meets your own reqirements.
 
+Examples of known compatible Audio Capture Device hardware equipment:
+
+- [Behringer UCA222](https://www.behringer.com/product.html?modelCode=0805-AAG) (without pre-amp, newer model that is a direct replacement for the UCA202)
+- [Behringer UCA202](https://www.behringer.com/behringer/product?modelCode=0805-AAC) (without pre-amp)
+- [Behringer UFO202](https://www.behringer.com/product.html?modelCode=P0484) (with pre-amp)
+- [ART USB Phono Plus](https://artproaudio.com/product/usb-phono-plus-project-series/) (a standalone pre-amp with USB interface that needs external power-suppy).
+
+Another option as ADC instead of a USB Audio Device that should technically provide the same function but has not been tested here are HiFiBerry's ANALOG INPUT products like "HIFIBERRY DAC+ ADC PRO", "HIFIBERRY DAC2 ADC PRO", or "HIFIBERRY DAC+ ADC" as input, (which as bonus could make the whole build an all-in-one package that could be aesthetically pleasing and almost have the clean look of a commercial appliance):
+  - https://www.hifiberry.com/blog/need-some-input/
+    - https://www.hifiberry.com/shop/boards/hifiberry-dac2-adc-pro/
+    - https://www.hifiberry.com/shop/boards/hifiberry-dac-adc-pro/
+    - https://www.hifiberry.com/shop/boards/hifiberry-dac-adc/
+
+#### Preamplifier (phone preamp)
+
+Note that some but not all vinyl record players (turntables/phonographs/gramophones) have a built-in preamplifier (also known as a phono preamp and RIAA pre-amp), and even if they do you still often have the option to disable the built-in preamplifier in favor of using an external preamp of higher quality or a other RIAA EQ curve for a different sound.
+
+If your Hi-Fi audio source equipment does not have a built-in pre-amp for analog output then you either need to buy specifically a USB Audio Device with pre-amp (like one of ones mentioned above) or use a separate high-fidelity preamplifier (RIAA/phono preamp) to put inline between the audio source equipment and the Audio Capture Device, (as otherwise you will not get a high-quality signal that has been amplified enough to allow good digitalization). 
+
+Examples of known good preamplifier hardware equipment:
+
+- PHONO PP400
+
+Note! Recommend use a galvanicly isolated power-supply made for aduio in-mind as that prevent ground loop noises and increase sound quality.
+
+#### Server:
+
+- Raspberry Pi 3 Model B or Raspberry Pi Zero 2 W and
+  - Micro SD Card - (8GB is enough).
+  - Good quality power-supply.
+    - Optionally: Get an "USB isolator" work by creating a new ground for the USB device)
+    - Again, this is also a galvanic isolator that is used to prevent ground loop noises and increase sound quality.
 
 ---
 
