@@ -51,6 +51,8 @@ Examples of known compatible Audio Capture Device hardware equipment:
 - [Behringer UCA202](https://www.behringer.com/behringer/product?modelCode=0805-AAC) (without pre-amp)
 - [Behringer UFO202](https://www.behringer.com/product.html?modelCode=P0484) (with pre-amp)
 - [ART USB Phono Plus](https://artproaudio.com/product/usb-phono-plus-project-series/) (a standalone pre-amp with USB interface that needs external power-suppy).
+- [IK Multimedia iRig Stream](https://www.ikmultimedia.com/products/irigstream/) (without pre-amp)
+- [IK Multimedia iRig Stream Pro](https://www.dlxmusic.se/produkter/studio/ljudkort/externa/ik-irig-stream-pro) (with pre-amp)
 
 Another option as ADC instead of a USB Audio Device that should technically provide the same function but has not been tested here are HiFiBerry's ANALOG INPUT products like "HIFIBERRY DAC+ ADC PRO", "HIFIBERRY DAC2 ADC PRO", or "HIFIBERRY DAC+ ADC" as input, (which as bonus could make the whole build an all-in-one package that could be aesthetically pleasing and almost have the clean look of a commercial appliance):
   - https://www.hifiberry.com/blog/need-some-input/
