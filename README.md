@@ -54,11 +54,15 @@ Examples of known compatible Audio Capture Device hardware equipment:
 - [IK Multimedia iRig Stream](https://www.ikmultimedia.com/products/irigstream/) (without pre-amp)
 - [IK Multimedia iRig Stream Pro](https://www.dlxmusic.se/produkter/studio/ljudkort/externa/ik-irig-stream-pro) (with pre-amp)
 
-Another option as ADC instead of a USB Audio Device that should technically provide the same function but has not been tested here are HiFiBerry's ANALOG INPUT products like "HIFIBERRY DAC+ ADC PRO", "HIFIBERRY DAC2 ADC PRO", or "HIFIBERRY DAC+ ADC" as input, (which as bonus could make the whole build an all-in-one package that could be aesthetically pleasing and almost have the clean look of a commercial appliance):
+Another option as ADC instead of a USB Audio Device that should technically provide the same function but has not been tested here are HiFiBerry's ANALOG INPUT products like "HiFiBerry DAC+ ADC PRO", "HiFiBerry DAC2 ADC PRO", or "HiFiBerry DAC+ ADC" as input, (which as bonus using HiFiBerry makes the whole build an all-in-one package that could be aesthetically pleasing and almost have the clean look of a commercial appliance):
   - https://www.hifiberry.com/blog/need-some-input/
     - https://www.hifiberry.com/shop/boards/hifiberry-dac2-adc-pro/
     - https://www.hifiberry.com/shop/boards/hifiberry-dac-adc-pro/
     - https://www.hifiberry.com/shop/boards/hifiberry-dac-adc/
+
+Note that not all HiFiBerry boards have been tested as with the Raspberry Pi 5 (so double-check board compatible if that is what you decide to go with):
+
+    - https://www.hifiberry.com/blog/pi5-compatibility-with-hifiberry-products/
 
 #### Preamplifier (phone preamp)
 
@@ -74,11 +78,11 @@ Note! Recommend use a galvanicly isolated power-supply made for aduio in-mind as
 
 #### Server:
 
-- Raspberry Pi 3 Model B or Raspberry Pi Zero 2 W and
-  - Micro SD Card - (8GB is enough).
-  - Good quality power-supply.
-    - Optionally: Get an "USB isolator" work by creating a new ground for the USB device)
-    - Again, this is also a galvanic isolator that is used to prevent ground loop noises and increase sound quality.
+- "Raspberry Pi 3 Model B" or a "Raspberry Pi Zero 2 W"
+  - Micro SD Card - (8GB is enough for a dedictaed solution).
+  - A good quality USB power-supply, (audio applications/equipment can be much more sensitive to power supplies).
+    - Optionally: Get an "USB isolator" or a USB power-supply with built-in isolator, (works by creating a new ground for the USB device).
+      - Again, this is also a galvanic isolator that is used to prevent ground loop noises and increase sound quality.
 
 ---
 
