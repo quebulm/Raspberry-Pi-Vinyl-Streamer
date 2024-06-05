@@ -59,6 +59,7 @@ Another option as ADC instead of a USB Audio Device that should technically prov
     - https://www.hifiberry.com/shop/boards/hifiberry-dac2-adc-pro/
     - https://www.hifiberry.com/shop/boards/hifiberry-dac-adc-pro/
     - https://www.hifiberry.com/shop/boards/hifiberry-dac-adc/
+  - Official HiFiBerry cases for Raspberry Pi: https://www.hifiberry.com/shop/#cases
 
 Note that not all HiFiBerry boards have been tested as with the Raspberry Pi 5 (so double-check board compatible if that is what you decide to go with):
 
