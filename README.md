@@ -4,9 +4,9 @@ This repository provides all the tools and step-by-step guide needed to convert 
 
 At the heart of this setup is the Raspberry Pi, a small and affordable ARM-based computer that serves as the audio streaming server (commonly referred to as music streamer or network streamers when sold as a prebuilt applicance).
 
-Other than your audio source you are also going to need an external audio capture device that provides line-in interface ports and ADC (analogue-to-digital converter) + a preamplifier if your audio source equipment does not have built-in preamp.
+Other than your audio source you are also going to need an external audio capture device that provides line-in interface ports and ADC (analog-to-digital converter) + an external preamplifier if your turntable does not have built-in preamp (or if want to disable the built-in preamp).
 
-An alternative to above is to buy an audio source with embedded USB audio codec output, like a "USB turntable" (there are several different models of USB turntables of various quality on the market so this might not be suitable for audiophiles).
+An alternative to using an external audio capture device is to buy an audio source with embedded USB audio codec output, like a "USB turntable" (there are several different models of "USB turntables" of various quality on the market but many might not be suitable for audiophiles).
 
 ![](https://i.ibb.co/pKLs9nC/image.webp)
 
@@ -14,13 +14,13 @@ An alternative to above is to buy an audio source with embedded USB audio codec 
 
 Disclaimer: I have personally tested this solution using the combination of a Behringer UCA202 USB Audio Device for analogue-to-digital conversion and capturing + a PHONO PP400 preamplifier, but in theory this method should work with every other Raspberry-compatible capture device and with any other preamplifier.
 
-1. **Preamplication**: Your turntable's audio output is first routed through a preamplifier (also known as a phono preamp and RIAA pre-amp), that converts a weak signal into an output signal strong enough to be noise-tolerant and strong enough for further processing. Without this preamplication, the final signal would be noisy or distorted. The preamp also ensures that your records sound balanced and accurate.
+1. **Preamplication**: Your turntable's audio output is first routed through a preamplifier (also known as a phono preamp), that converts a weak signal into an output signal strong enough to be noise-tolerant and strong enough for further processing. Without this preamplication, the final signal would be noisy or distorted. The preamp also ensures that your records sound balanced and accurate.
 
 2. **Analog Audio Capture and Digital Conversion**: The amplified signal from the pre-amp is fed into the audio capture device, where it is digitized using its ADC (analogue-to-digital converter) and sent to the Raspberry Pi.
 
 3. **Streaming**: On the Raspberry Pi, two critical software components that come into play:
-    - **Darkice**: This live audio streamer that captures/records the digital audio from the  audio interface and encodes it into a streamable format.
-    - **Icecast**: This streaming media server takes the encoded audio from Darkice and broadcasts it, making it accessible to listeners locally via a URL or over the internet.
+    - **Darkice**: This live audio streamer that captures/records the digital audio from the audio interface and encodes it into a streamable audio format.
+    - **Icecast**: This "internet radio" streaming media server takes the encoded audio from Darkice and broadcasts it, making it accessible to listeners locally via HTTP URL or over the internet.
 
 ### Setup Options:
 
@@ -43,7 +43,7 @@ Ensure that you have all the prerequisite hardware components mentioned below be
 
 #### Audio Capture Device
 
-If you own an Hi-Fi audio source equipment like an LP record player/turntable that only has analog audio output (.i.e. it does not have a embedded USB audio codec output) then the easiest option is to buy and use an external stand-alone USB Audio Device for analogue-to-digital conversion. These mentioned solutions most often support utilizing a USB Audio Class 2.0 pipeline that can support high-definition audio formats up to 192KHz and 32bits using a standard digital audio interface, however you need to check the specification before buying the device to make sure it meets your own reqirements.
+If you own an Hi-Fi audio source equipment like an LP record player/turntable that only has analog audio output (.i.e. it does not have an embedded USB audio codec output) then the easiest option is to buy and use an external stand-alone USB Audio Device for analogue-to-digital conversion. These mentioned solutions most often support utilizing a USB Audio Class 2.0 pipeline that can support high-definition audio formats up to 192KHz and 32bits using a standard digital audio interface, however, you need to check the specification before buying the device to make sure it meets your own reqirements.
 
 Examples of known compatible Audio Capture Device hardware equipment:
 
