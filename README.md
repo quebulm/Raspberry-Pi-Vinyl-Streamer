@@ -315,3 +315,13 @@ Icecast usually installs itself as a service by default. If for some reason it i
 If all goes well, your quality audio streaming setup is now complete!
 
 
+# References to other similar projects:
+
+  * https://github.com/gieljnssns/darkice-libaacplus-rpi-guide
+  * https://maker.pro/raspberry-pi/projects/how-to-build-an-internet-radio-station-with-raspberry-pi-darkice-and-icecast
+    * https://www.youtube.com/watch?v=BurdTQbgbRc
+  * https://github.com/aschober/vinyl-cast
+  * https://www.instructables.com/Stream-AUX-and-Bluetooth-Through-Raspberry-Pi-to-W/
+  * https://dupontgu.medium.com/how-to-stream-your-record-player-throughout-your-home-for-cheap-fb044368a240
+    * https://www.instructables.com/Stream-Turntable-Vinyl-to-Chromecast/
+  * https://www.instructables.com/Add-Aux-to-Sonos-Using-Raspberry-Pi/
